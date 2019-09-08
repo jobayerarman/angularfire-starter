@@ -9,6 +9,7 @@
 
 # dependencies
 /node_modules
+/bower_components
 
 # profiling files
 chrome-profiler-events*.json
@@ -38,9 +39,20 @@ speed-measure-plugin*.json
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
+package-lock.json
 testem.log
 /typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
