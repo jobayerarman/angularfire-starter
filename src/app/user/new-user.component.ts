@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { AvatarDialogComponent } from "../user/avatar-dialog.component";
-import { Router } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-new-user',
@@ -77,5 +77,4 @@ export class NewUserComponent implements OnInit {
         }
       )
   }
-
 }
