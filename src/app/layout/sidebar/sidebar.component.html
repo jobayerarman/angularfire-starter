@@ -1,1 +1,44 @@
-<p>sidebar works!</p>
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+  <div class="list-group">
+    <a routerLink="/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+      <span>{{ 'Home' }}</span>
+    </a>
+    <a [routerLink]="['/members']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
+      <span>{{ 'Members' }}</span>
+    </a>
+    <a [routerLink]="['/employee']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-table"></i>&nbsp;
+      <span>{{ 'Employee' }}</span>
+    </a>
+    <a [routerLink]="['/dueFinder']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-edit"></i>&nbsp;
+      <span>{{ 'Due Finder' }}</span>
+    </a>
+    <a [routerLink]="['/attendence']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-desktop"></i>&nbsp;
+      <span>{{ 'Attendence' }}</span>
+    </a>
+    <a [routerLink]="['/reports']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-wrench"></i>&nbsp;
+      <span>{{ 'Reports' }}</span>
+    </a>
+    <a [routerLink]="['/notes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-th-list"></i>&nbsp;
+      <span>{{ 'Notes' }}</span>
+    </a>
+    <a [routerLink]="['/packages']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-file-o"></i>&nbsp;
+      <span>{{ 'Packages' }}</span>
+    </a>
+    <a [routerLink]="['/resetPassword']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-file-o"></i>&nbsp;
+      <span>{{ 'Change Password' }}</span>
+    </a>
+  </div>
+  <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+    <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+    <span>{{ 'Collapse Sidebar' }}</span>
+  </div>
+</nav>
