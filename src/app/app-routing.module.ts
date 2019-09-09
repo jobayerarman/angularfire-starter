@@ -11,6 +11,7 @@ import { DashboardModule } from './layout/dashboard.module';
 const routes: Routes = [
   { path: '', loadChildren: () => import('./layout/dashboard.module').then(m => m.DashboardModule) },
   { path: 'dashboard', loadChildren: () => import('./layout/dashboard.module').then(m => m.DashboardModule) },
+  { path: '**', loadChildren: () => import('./layout/dashboard.module').then(m => m.DashboardModule) }
 ];
 
 @NgModule({
