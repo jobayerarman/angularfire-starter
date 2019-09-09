@@ -21,7 +21,8 @@ import { FirebaseService } from './services/firebase.service';
 import { environment } from '../environments/environment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from '@angular/material';
+import {
+  MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule,  } from '@angular/material';
 
 
 @NgModule({
@@ -44,7 +45,10 @@ import { MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } fro
     MatButtonModule,
     MatInputModule,
     MatSliderModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
   ],
   providers: [FirebaseService, EditUserResolver],
   bootstrap: [AppComponent],
