@@ -1,17 +1,10 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { RouterModule } from '@angular/router';
-import { rootRouterConfig } from './app.routes';
-
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AvatarDialogComponent } from './user/avatar-dialog.component';
-import { EditUserComponent } from './user/edit-user.component';
-import { EditUserResolver } from './user/edit-user.resolver';
-import { NewUserComponent } from './user/new-user.component';
-import { HomeComponent } from './home/home.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -21,39 +14,20 @@ import { FirebaseService } from './services/firebase.service';
 import { environment } from '../environments/environment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule,  } from '@angular/material';
+import { DashboardComponent } from './layout/dashboard.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AvatarDialogComponent,
-    EditUserComponent,
-    NewUserComponent,
-    HomeComponent
-  ],
-  entryComponents: [AvatarDialogComponent],
+  declarations: [AppComponent],
   imports: [
+    CommonModule,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: false }),
-    AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule,
+    AppRoutingModule,
     AngularFirestoreModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatSliderModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatFormFieldModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [FirebaseService, EditUserResolver],
-  bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
